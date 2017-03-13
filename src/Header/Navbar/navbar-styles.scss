@@ -1,0 +1,13 @@
+@import '../../shared.scss';
+
+.navbar {
+  height: 55px;
+  h1 {
+    text-align: left;
+    small {
+      margin-left: 1em;
+      font-size: .6em;
+      color: $grey-color;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import '../shared.scss';
+
+.data-filters {
+  ul {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-flex;
+    li {
+      display: inline;
+      margin-right: 10px;
+      a {
+        padding: 10px;
+      }
+      .active {
+        text-decoration: none;
+        background-color: $grey-color;
+        color: #FFF;
+        border-radius: 4px;
+        cursor: default;
+      }
+    }
+  }
+}
