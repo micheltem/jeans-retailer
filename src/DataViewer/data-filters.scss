@@ -1,6 +1,16 @@
 @import '../shared.scss';
 
 .data-filters {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid $grey-color;
+  margin: 20px 0 40px 0;
+  > div {
+    flex: 1;
+    &:last-of-type {
+      border-left: 2px solid $grey-color;
+    }
+  }
   ul {
     margin-top: 20px;
     margin-bottom: 20px;

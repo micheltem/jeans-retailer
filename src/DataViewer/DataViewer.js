@@ -88,9 +88,10 @@ export default class DataViewer extends Component {
         <div className="header-row">
           { columnNames.map( (name) => this.renderHeaderColumn(name) ) }
         </div>
+        {/* No groups */}
         { !filter && orders.map( (order, i) => this.renderOrderRow(order, i) ) }
-        {
-          Object.keys(groupedOrders|| {}).map( (key) => {
+        {/* 1 group level */}
+        { Object.keys(groupedOrders|| {}).map( (key) => {
             return this.renderGroup(key, groupedOrders, filter)
           })
         }

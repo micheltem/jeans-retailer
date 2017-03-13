@@ -25,7 +25,7 @@ class DataViewerData extends Component {
     } else if (ordersFetch.fulfilled) {
       const data = this.groupData(filter, ordersFetch.value);
       return <div>
-            <DataFilters />
+            <DataFilters filter={filter}/>
             <DataViewer
               orders={ ordersFetch.value }
               groupedOrders={ data }
