@@ -3,12 +3,13 @@
 .data-filters {
   display: flex;
   flex-direction: row;
-  border-bottom: 2px solid $grey-color;
+  border-bottom: 2px solid $primary-color;
   margin: 20px 0 40px 0;
   > div {
     flex: 1;
+    padding: 10px;
     &:last-of-type {
-      border-left: 2px solid $grey-color;
+      border-left: 1px solid $primary-color;
     }
   }
   ul {
@@ -17,13 +18,13 @@
     display: inline-flex;
     li {
       display: inline;
-      margin-right: 10px;
+      margin-right: 5px;
       a {
-        padding: 10px;
+        padding: 5px;
       }
       .active {
         text-decoration: none;
-        background-color: $grey-color;
+        background-color: $primary-color;
         color: #FFF;
         border-radius: 4px;
         cursor: default;

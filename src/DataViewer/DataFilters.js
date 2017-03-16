@@ -1,6 +1,7 @@
-import React, { Component, PropTypes,  State } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 import './data-filters.css';
+import utils from '../common/utils';
 
 const propTypes = {};
 
@@ -15,29 +16,41 @@ export default class DataFilters extends Component {
   getUrlWith(filter2) {
     return `/filter/${this.props.filter}/and/${filter2}`;
   }
-  isActive(item) {
-    // return this.state.isActive(item)
-    return true
+  renderLink(name, filter, filter2) {
+    const to = "/filter/" + name;
+    if(!filter2) {
+      return <li><Link name={name} activeClassName="active" to={to}>{utils.capitalise(name)}</Link></li>
+    } else if(filter && filter2 && (filter2.toLowerCase() !== filter.toLowerCase())) {
+      return <li><Link activeClassName="active" to={this.getUrlWith(name)}>{utils.capitalise(name)}</Link></li>
+    } else {
+      return <span></span>;
+    }
   }
   render() {
-    const filter =  this.props;
+    const { filter } =  this.props;
     return (
       <div className="data-filters">
         <div>
           <h1>Group by:</h1>
           <ul>
             <li><Link name="none" activeClassName="active" to="/">No Filter</Link></li>
-            <li><Link name="gender" activeClassName="active" to="/filter/gender">Gender</Link></li>
-            <li><Link name="size" activeClassName="active" to="/filter/size">Size</Link></li>
-            <li><Link name="colour" activeClassName="active" to="/filter/colour">Colour</Link></li>
+            { this.renderLink('deliveryCountry', filter) }
+            { this.renderLink('manufacturer', filter) }
+            { this.renderLink('gender', filter) }
+            { this.renderLink('size', filter) }
+            { this.renderLink('colour', filter) }
+            { this.renderLink('style', filter) }
           </ul>
         </div>
         <div>
           <h1>...and then by:</h1>
           <ul>
-            <li><Link activeClassName="active" to={this.getUrlWith('manufacturer')}>manufacturer</Link></li>
-            <li><Link activeClassName="active" to={this.getUrlWith('style')}>style</Link></li>
-            <li><Link activeClassName="active" to={this.getUrlWith('deliveryCountry')}>deliveryCountry</Link></li>
+            { this.renderLink('deliveryCountry', filter, 'deliveryCountry') }
+            { this.renderLink('manufacturer', filter, 'manufacturer') }
+            { this.renderLink('gender', filter, 'gender') }
+            { this.renderLink('size', filter, 'size') }
+            { this.renderLink('colour', filter, 'colour') }
+            { this.renderLink('style', filter, 'style') }
           </ul>
         </div>
       </div>

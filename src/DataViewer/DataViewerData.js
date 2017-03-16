@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-refetch';
 import DataViewer from './DataViewer';
 import './DataViewerData.css';
-import { groupBy, toArray } from 'lodash'
 import DataFilters from './DataFilters';
 
 // This component is the smart component for DataViewer which stays a dumb component
@@ -12,27 +11,22 @@ class DataViewerData extends Component {
     this.state = {};
   }
 
-  groupData (filter, data) {
-    return groupBy(data, filter);
-  }
-
   render () {
-    const { ordersFetch, filter } = this.props;
+    const { ordersFetch, filter, filter2 } = this.props;
     if (ordersFetch.rejected) {
       return <span className='fetch-error'>
         Sorry! This hasn't worked... Refresh the page.
       </span>
     } else if (ordersFetch.fulfilled) {
-      const data = this.groupData(filter, ordersFetch.value);
-      return <div>
-            <DataFilters filter={filter}/>
+      return <div  className="fetch-fulfilled">
+            <DataFilters filter={filter} filter2={filter2}/>
             <DataViewer
               orders={ ordersFetch.value }
-              groupedOrders={ data }
-              filter={ filter }>
-            </DataViewer>;
+              filter={ filter }
+              filter2={ filter2 }>
+            </DataViewer>
           </div>
-    } else { //if (ordersFetch.pending) {
+    } else {
       return <div>
             <DataFilters />
             <div className="fetch-pending">
@@ -46,6 +40,5 @@ class DataViewerData extends Component {
 }
 
 export default connect(props => ({
-  ordersFetch: {url: `/api/mock_orders.json`, comparison:`${props.groupBy}:${props.filter}`},
-  // likesFetch: `/users/${props.userId}/likes`
+  ordersFetch: {url: `/api/mock_orders.json`, comparison:`${props.filter}:${props.filter2}`},
 }))(DataViewerData)

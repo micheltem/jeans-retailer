@@ -1,4 +1,4 @@
-@import "reset.css";
+@import "../public/reset.css";
 @import "shared.scss";
 
 .app {
@@ -12,9 +12,24 @@
   .header {
     text-align: center;
     background-color: #222;
-    height: 100px;
+    min-height: 100px;
     padding: 20px;
     color: white;
+  }
+
+  .show, .hide {
+    float: right;
+    color: #000;
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .show {
+    border: 2px solid #333;
   }
 
   .intro {

@@ -1,18 +1,51 @@
 @import '../shared.scss';
 
 .data-viewer {
+  margin: 0 20px;
+  .group-name-title {
+    text-align: left;
+  }
+  .group-name-count {
+    text-align: right;
+  }
+  .col {
+    flex: 1;
+    display: flex; // re-define flex to center vertically
+    justify-content: center;
+    flex-direction: column;
+  }
+  .group-header {
+    border: 2px solid $secondary-color;
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 1.4em;
+    background-color: $primary-color;
+    border-radius: 6px 6px 0 0;
+    color: #FFF;
+    cursor: pointer;
+    &.top-level {
+
+    }
+  }
+  .children {
+    border: 1px solid $primary-color;
+    border-top-width: 0;
+    padding: 5px;
+  }
   .header-row {
     display: flex;
     flex-direction: row;
     height: 50px;
+    margin-left: 60px;
+    margin-right: 20px;
     .col {
-      border-bottom: 2px solid $grey-color;
-      flex: 1;
-      display: flex; // re-define flex to center vertically
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      margin: 5px;
+      text-align: left;
+      &:last-of-type {
+        text-align: right;
+      }
     }
   }
   .order-group:not(.expanded) {
@@ -25,13 +58,15 @@
     //   height: 0;
     // }
   }
+  .expand {
+    font-size: 18px;
+  }
   .data-row {
     display: flex;
     flex-direction: row;
-    height: 40px;
     border-bottom: 1px solid #CCC;
-    border-left: 2px solid $grey-color;
-    border-right: 2px solid $grey-color;
+    border-left: 2px solid $primary-color;
+    border-right: 2px solid $primary-color;
     .col {
       flex: 1;
     }
@@ -39,17 +74,23 @@
       display: flex; // re-define flex to center vertically
       justify-content: center;
       flex-direction: column;
-      text-align: center;
       margin: 5px;
     }
-    .expand {
 
+    .colour {
+      padding: 10px;
+    }
+    .count {
+      text-align: right;
+      padding-right: 10px;
     }
   }
   .order-group {
+    margin-left: 60px;
     .orders-list {
       max-height: 450px;
       overflow: scroll;
+      margin: 0;
     }
     .expand {
       display: none;
@@ -59,27 +100,10 @@
         display: flex;
       }
     }
-    .group-header {
-      border: 2px solid $dark-grey-color;
-      display: flex;
-      padding: 10px;
-      margin-top: 20px;
-      font-size: 1.4em;
-      background-color: $grey-color;
-      border-radius: 6px 6px 0 0;
-      color: #FFF;
-      cursor: pointer;
-    }
     .col {
       flex: 1;
       justify-content: center;
-      text-align: center;
     }
-    .group-name-title {
-      text-align: left;
-    }
-    .group-name-count {
-      text-align: right;
-    }
+
   }
 }
