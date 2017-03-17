@@ -16,19 +16,19 @@ Unzip the current file onto your hard-drive.
 `npm start`  
 Visit `http://localhost:3000`
 
-To run tests (you must run npm install & npm start at least once before):
+To run tests (you must run npm install & npm start at least once before):  
 `npm test`
 
-To see the extensive unit-test coverage (close to 100%):
+To see the extensive unit-test coverage (close to 100%):  
 `npm test -- --coverage` (Note the -- --!)
 
 To run the end-2-end test suite:  
 `npm run e2e`  
 
-To run a production build (minified, etc...):
+To run a production build (minified, etc...):  
 `npm run build`
 
-To detach from react-create-app:
+To detach from react-create-app:  
 `npm run eject`
 
 
