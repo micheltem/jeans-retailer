@@ -25,7 +25,7 @@ To see the extensive unit-test coverage (close to 100%):
 To run the end-2-end test suite:  
 `npm run e2e`  
 
-To run a production build (minified, etc...):  
+To create a production build (minified, etc... for deployment to AWS, Heroku, ...):  
 `npm run build`
 
 To detach from react-create-app:  
