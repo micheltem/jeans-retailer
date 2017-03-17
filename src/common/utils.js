@@ -41,6 +41,10 @@ const fns = {
       return "";
     }
     return string.charAt(0).toUpperCase() + string.slice(1);
+  },
+  enrich: (row) => {
+    row.month = row.orderDate.match(/\d\d\/(\d\d)\/\d\d\d\d/)[1];
+    return row;
   }
 }
 

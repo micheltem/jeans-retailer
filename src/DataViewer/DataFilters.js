@@ -40,6 +40,7 @@ export default class DataFilters extends Component {
             { this.renderLink('size', filter) }
             { this.renderLink('colour', filter) }
             { this.renderLink('style', filter) }
+            { this.renderLink('month', filter) }
           </ul>
         </div>
         <div>
@@ -51,6 +52,7 @@ export default class DataFilters extends Component {
             { this.renderLink('size', filter, 'size') }
             { this.renderLink('colour', filter, 'colour') }
             { this.renderLink('style', filter, 'style') }
+            { this.renderLink('month', filter, 'month') }
           </ul>
         </div>
       </div>

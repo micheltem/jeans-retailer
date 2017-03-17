@@ -11,11 +11,12 @@ You only need `npm` to run the application. When the application starts it will 
 Unzip the current file onto your hard-drive.
 
 ## Usage
-`$ cd jeans-retailer`
-`$ npm start`
+`cd jeans-retailer`
+`npm install`
+`npm start`
 Visit `http://localhost:3000`
 
-To run tests:
+To run tests (you must run npm install & npm start at least once before):
 `npm test`
 
 To see the extensive test coverage (close to 100%):

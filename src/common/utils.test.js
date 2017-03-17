@@ -30,4 +30,9 @@ describe('The utils ', () => {
     expect(data['M_22']).to.have.length(1);
     expect(data['F_13']).to.have.length(2);
   });
+
+  it('enriches data with the year\'s month', () => {
+    const data = utils.enrich(threeOrders[0]);
+    expect(data.month).to.equal('04');
+  })
 })
