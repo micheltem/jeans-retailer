@@ -18,7 +18,13 @@
     "react-addons-test-utils": "15.4.2",
     "react-refetch": "1.0.0",
     "react-scripts": "0.9.4",
-    "sinon": "1.17.7"
+    "sinon": "1.17.7",
+    "wdio-dot-reporter": "0.0.7",
+    "wdio-mocha-framework": "0.5.9",
+    "wdio-phantomjs-service": "0.2.2",
+    "wdio-selenium-standalone-service": "0.0.8",
+    "wdio-spec-reporter": "0.1.0",
+    "webdriverio": "4.6.2"
   },
   "scripts": {
     "start-js": "react-scripts start",
@@ -27,6 +33,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "build-css": "node-sass src/ -o src/",
-    "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive"
+    "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive",
+    "e2e": "npm start & sleep 3000 & $(npm bin)/wdio wdio.conf.js"
   }
 }
