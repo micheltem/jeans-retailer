@@ -16,7 +16,7 @@ class DataViewerData extends Component {
     const { ordersFetch, filter, filter2 } = this.props;
     if (ordersFetch.rejected) {
       return <span className='fetch-error'>
-        Sorry! This hasn't worked... Refresh the page.
+        Sorry! This hasn`t worked... Refresh the page.
       </span>
     } else if (ordersFetch.fulfilled) {
       const data = (ordersFetch.value || []).map(utils.enrich);
